@@ -1,6 +1,6 @@
 [
   {
-    "name": "Aeos Cookie",
+    "name": "Aeos_Cookie",
     "display_name": "Aeos Cookie",
     "bonus1": "HP +240",
     "bonus2": "",
@@ -37,7 +37,7 @@
     "image": ""
   },
   {
-    "name": "Assault Vest",
+    "name": "Assault_Vest",
     "display_name": "Assault Vest",
     "bonus1": "HP +270",
     "bonus2": "Sp. Defense +42",
@@ -74,7 +74,7 @@
     "image": ""
   },
   {
-    "name": "Attack Weight",
+    "name": "Attack_Weight",
     "display_name": "Attack Weight",
     "bonus1": "Attack +18",
     "bonus2": "",
@@ -111,7 +111,7 @@
     "image": ""
   },
   {
-    "name": "Buddy Barrier",
+    "name": "Buddy_Barrier",
     "display_name": "Buddy Barrier",
     "bonus1": "HP +600",
     "bonus2": "",
@@ -148,7 +148,7 @@
     "image": ""
   },
   {
-    "name": "Choice Specs",
+    "name": "Choice_Specs",
     "display_name": "Choice Specs",
     "bonus1": "Sp. Attack +39",
     "bonus2": "",
@@ -222,7 +222,7 @@
     "image": ""
   },
   {
-    "name": "Exp Share",
+    "name": "Exp_Share",
     "display_name": "Exp. Share",
     "bonus1": "HP +240",
     "bonus2": "Speed +150",
@@ -259,7 +259,7 @@
     "image": ""
   },
   {
-    "name": "Float Stone",
+    "name": "Float_Stone",
     "display_name": "Float Stone",
     "bonus1": "Attack +24",
     "bonus2": "Speed +120",
@@ -296,7 +296,7 @@
     "image": ""
   },
   {
-    "name": "Focus Band",
+    "name": "Focus_Band",
     "display_name": "Focus Band",
     "bonus1": "Sp. Defense +30",
     "bonus2": "Defense +30",
@@ -407,7 +407,7 @@
     "image": ""
   },
   {
-    "name": "Razor Claw",
+    "name": "Razor_Claw",
     "display_name": "Razor Claw",
     "bonus1": "Attack +15",
     "bonus2": "Critical-Hit Rate +2.1%",
@@ -444,7 +444,7 @@
     "image": ""
   },
   {
-    "name": "Rocky Helmet",
+    "name": "Rocky_Helmet",
     "display_name": "Rocky Helmet",
     "bonus1": "HP +240",
     "bonus2": "Defense +42",
@@ -481,7 +481,7 @@
     "image": ""
   },
   {
-    "name": "Scope Lens",
+    "name": "Scope_Lens",
     "display_name": "Scope Lens",
     "bonus1": "Critical-Hit Rate +6%",
     "bonus2": "Critical-Hit Damage +12%",
@@ -518,7 +518,7 @@
     "image": ""
   },
   {
-    "name": "Score Shield",
+    "name": "Score_Shield",
     "display_name": "Score Shield",
     "bonus1": "HP +450",
     "bonus2": "",
@@ -555,7 +555,7 @@
     "image": ""
   },
   {
-    "name": "Shell Bell",
+    "name": "Shell_Bell",
     "display_name": "Shell Bell",
     "bonus1": "Sp. Attack +24",
     "bonus2": "CD Reduction +4.5%",
@@ -592,7 +592,7 @@
     "image": ""
   },
   {
-    "name": "Special Attack Specs",
+    "name": "Special_Attack_Specs",
     "display_name": "Special Attack Specs",
     "bonus1": "Sp. Attack +24",
     "bonus2": "",
@@ -629,7 +629,7 @@
     "image": ""
   },
   {
-    "name": "Weakness Policy",
+    "name": "Weakness_Policy",
     "display_name": "Weakness Policy",
     "bonus1": "HP +210",
     "bonus2": "Attack +15",
@@ -666,7 +666,7 @@
     "image": ""
   },
   {
-    "name": "Wise Glasses",
+    "name": "Wise_Glasses",
     "display_name": "Wise Glasses",
     "bonus1": "Sp. Attack +39",
     "bonus2": "",

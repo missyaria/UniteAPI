@@ -82,7 +82,41 @@ def getBattleitemImage(name: str):
 
 @app.get("/helditems")
 def getHelditems():
-    return helditems
+    return [i["display_name"] for i in helditems]
+
+def getItemFromHelditems(name: str) -> list:
+    for i in helditems:
+        if name.lower() == i.get('name').lower():
+            return i 
+    return None
+
+@app.get("/helditems/{name}")
+def getHelditemName(name: str):
+    result = getItemFromHelditems(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    return result
+
+@app.get("/helditems/{name}/bonus")
+def getHelditemName(name: str):
+    result = getItemFromHelditems(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    return str(result["bonus1"]) + " " + str(result["bonus2"]) + " " + str(result["bonus3"])
+
+@app.get("/helditems/{name}/desc")
+def getHelditemName(name: str):
+    result = getItemFromHelditems(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    return str(result["description1"])
+    
+@app.get("/helditems/{name}/image")
+def getHelditemName(name: str):
+    result = getItemFromHelditems(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    return str(result["image"])
 
 def getPokemonFromPokemons(name: str) -> list:
     for i in pokemons:
