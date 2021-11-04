@@ -5,7 +5,9 @@ with open('pokemons.json', mode='r') as f:
 with open('stats.json', mode='r') as f:
     stats = json.load(f)
 with open('battleitems.json', mode='r') as f:
-    battleitems = json.load(f)    
+    battleitems = json.load(f)
+with open('helditems.json', mode='r') as f:
+    helditems = json.load(f)    
 app = FastAPI()
 
 @app.get("/")
@@ -24,7 +26,7 @@ def getPokemonFromPokemons(name: str) -> list:
     return None
 
 @app.get("/pokemons/stats")
-def getPkm():
+def getStats():
     return [i["level"] for i in stats]
 
 def getPokemonFromStats(name: str) -> list:
@@ -34,7 +36,7 @@ def getPokemonFromStats(name: str) -> list:
     return None
 
 @app.get("/battleitems")
-def getPkm():
+def getBattleitems():
     return [i["display_name"] for i in battleitems]
 
 def getItemFromBattleitems(name: str) -> list:
@@ -44,39 +46,49 @@ def getItemFromBattleitems(name: str) -> list:
     return None
 
 @app.get("/battleitems/{name}")
-def getPokemon(name: str):
+def getBattleitemName(name: str):
     result = getItemFromBattleitems(name)
     if result is None:
         return f"Error : {name} isn't available"
     return result
 
 @app.get("/battleitems/{name}/description")
-def getPokemon(name: str):
+def getBattleitemDesc(name: str):
     result = getItemFromBattleitems(name)
     if result is None:
         return f"Error : {name} isn't available"
     return result["description"]
 
 @app.get("/battleitems/{name}/cooldown")
-def getPokemon(name: str):
+def getBattleitemCd(name: str):
     result = getItemFromBattleitems(name)
     if result is None:
         return f"Error : {name} isn't available"
     return result["cooldown"]
 
 @app.get("/battleitems/{name}/unlocklevel")
-def getPokemon(name: str):
+def getBattleitemUnlock(name: str):
     result = getItemFromBattleitems(name)
     if result is None:
         return f"Error : {name} isn't available"
     return result["unlocklevel"]
 
 @app.get("/battleitems/{name}/image")
-def getPokemon(name: str):
+def getBattleitemImage(name: str):
     result = getItemFromBattleitems(name)
     if result is None:
         return f"Error : {name} isn't available"
     return result["image"]
+
+@app.get("/helditems")
+def getHelditems():
+    return helditems
+
+def getPokemonFromPokemons(name: str) -> list:
+    for i in pokemons:
+        if name.lower() == i.get('name').lower():
+            return i 
+    return None
 
 @app.get("/pokemons/{name}")
 def getPokemon(name: str):
@@ -130,7 +142,7 @@ def getPokemonStatHP(name: str, level: int =None):
     return result["level"][int(level)-1]["hp"]
     
 @app.get("/pokemons/{name}/stat/attack")
-def getPokemonStatHP(name: str, level: int =None):
+def getPokemonStatAtk(name: str, level: int =None):
     result = getPokemonFromStats(name)
     if result is None:
         return f"Error : {name} isn't available"
@@ -141,7 +153,7 @@ def getPokemonStatHP(name: str, level: int =None):
     return result["level"][int(level)-1]["attack"]
 
 @app.get("/pokemons/{name}/stat/defense")
-def getPokemonStatHP(name: str, level: int =None):
+def getPokemonStatDef(name: str, level: int =None):
     result = getPokemonFromStats(name)
     if result is None:
         return f"Error : {name} isn't available"
@@ -152,7 +164,7 @@ def getPokemonStatHP(name: str, level: int =None):
     return result["level"][int(level)-1]["defense"]
 
 @app.get("/pokemons/{name}/stat/sp_attack")
-def getPokemonStatHP(name: str, level: int =None):
+def getPokemonStatSpa(name: str, level: int =None):
     result = getPokemonFromStats(name)
     if result is None:
         return f"Error : {name} isn't available"
@@ -163,7 +175,7 @@ def getPokemonStatHP(name: str, level: int =None):
     return result["level"][int(level)-1]["sp_attack"]
 
 @app.get("/pokemons/{name}/stat/sp_defense")
-def getPokemonStatHP(name: str, level: int =None):
+def getPokemonStatSpd(name: str, level: int =None):
     result = getPokemonFromStats(name)
     if result is None:
         return f"Error : {name} isn't available"
@@ -174,7 +186,7 @@ def getPokemonStatHP(name: str, level: int =None):
     return result["level"][int(level)-1]["sp_defense"]
 
 @app.get("/pokemons/{name}/stat/crit")
-def getPokemonStatHP(name: str, level: int =None):
+def getPokemonStatCrit(name: str, level: int =None):
     result = getPokemonFromStats(name)
     if result is None:
         return f"Error : {name} isn't available"
@@ -185,7 +197,7 @@ def getPokemonStatHP(name: str, level: int =None):
     return str(result["level"][int(level)-1]["crit"]) + "%"
 
 @app.get("/pokemons/{name}/stat/cdr")
-def getPokemonStatHP(name: str, level: int =None):
+def getPokemonStatCDR(name: str, level: int =None):
     result = getPokemonFromStats(name)
     if result is None:
         return f"Error : {name} isn't available"
@@ -196,7 +208,7 @@ def getPokemonStatHP(name: str, level: int =None):
     return str(result["level"][int(level)-1]["cdr"]) + "%"
 
 @app.get("/pokemons/{name}/stat/lifesteal")
-def getPokemonStatHP(name: str, level: int =None):
+def getPokemonStatLifesteal(name: str, level: int =None):
     result = getPokemonFromStats(name)
     if result is None:
         return f"Error : {name} isn't available"
