@@ -34,7 +34,7 @@
     "level1": "100",
     "level10": "150",
     "level20": "200",
-    "image": ""
+    "image": "https://d275t8dp8rxb42.cloudfront.net/items/held/Aeos+Cookie.png"
   },
   {
     "name": "Assault_Vest",
@@ -71,7 +71,7 @@
     "level1": "9%",
     "level10": "12%",
     "level20": "15%",
-    "image": ""
+    "image": "https://d275t8dp8rxb42.cloudfront.net/items/held/Assault+Vest.png"
   },
   {
     "name": "Attack_Weight",
@@ -108,7 +108,7 @@
     "level1": "6",
     "level10": "9",
     "level20": "12",
-    "image": ""
+    "image": "https://d275t8dp8rxb42.cloudfront.net/items/held/Attack+Weight.png"
   },
   {
     "name": "Buddy_Barrier",
@@ -145,7 +145,7 @@
     "level1": "20%",
     "level10": "30%",
     "level20": "40%",
-    "image": ""
+    "image": "https://d275t8dp8rxb42.cloudfront.net/items/held/Buddy+Barrier.png"
   },
   {
     "name": "Choice_Specs",
@@ -182,7 +182,7 @@
     "level1": "30%",
     "level10": "35%",
     "level20": "40%",
-    "image": ""
+    "image": "https://d275t8dp8rxb42.cloudfront.net/items/held/Choice+Specs.png"
   },
   {
     "name": "Energy Amplifier",
@@ -219,7 +219,7 @@
     "level1": "7%",
     "level10": "14%",
     "level20": "21%",
-    "image": ""
+    "image": "https://d275t8dp8rxb42.cloudfront.net/items/held/Energy+Amplifier.png"
   },
   {
     "name": "Exp_Share",
@@ -256,7 +256,7 @@
     "level1": "2",
     "level10": "3",
     "level20": "4",
-    "image": ""
+    "image": "https://d275t8dp8rxb42.cloudfront.net/items/held/Exp+Share.png"
   },
   {
     "name": "Float_Stone",
@@ -293,7 +293,7 @@
     "level1": "10%",
     "level10": "15%",
     "level20": "20%",
-    "image": ""
+    "image": "https://d275t8dp8rxb42.cloudfront.net/items/held/Float+Stone.png"
   },
   {
     "name": "Focus_Band",
@@ -330,7 +330,7 @@
     "level1": "8%",
     "level10": "11%",
     "level20": "14%",
-    "image": ""
+    "image": "https://d275t8dp8rxb42.cloudfront.net/items/held/Focus+Band.png"
   },
   {
     "name": "Leftovers",
@@ -367,7 +367,7 @@
     "level1": "1%",
     "level10": "1.50%",
     "level20": "2%",
-    "image": ""
+    "image": "https://d275t8dp8rxb42.cloudfront.net/items/held/Leftovers.png"
   },
   {
     "name": "Muscle Band",
@@ -404,7 +404,7 @@
     "level1": "1%",
     "level10": "2%",
     "level20": "3%",
-    "image": ""
+    "image": "https://d275t8dp8rxb42.cloudfront.net/items/held/Muscle+Band.png"
   },
   {
     "name": "Razor_Claw",
@@ -441,7 +441,7 @@
     "level1": "40%",
     "level10": "45%",
     "level20": "50%",
-    "image": ""
+    "image": "https://d275t8dp8rxb42.cloudfront.net/items/held/Razor+Claw.png"
   },
   {
     "name": "Rocky_Helmet",
@@ -478,7 +478,7 @@
     "level1": "3%",
     "level10": "4%",
     "level20": "5%",
-    "image": ""
+    "image": "https://d275t8dp8rxb42.cloudfront.net/items/held/Rocky+Helmet.png"
   },
   {
     "name": "Scope_Lens",
@@ -515,7 +515,7 @@
     "level1": "45%",
     "level10": "60%",
     "level20": "75%",
-    "image": ""
+    "image": "https://d275t8dp8rxb42.cloudfront.net/items/held/Scope+Lens.png"
   },
   {
     "name": "Score_Shield",
@@ -552,7 +552,7 @@
     "level1": "5%",
     "level10": "7.50%",
     "level20": "10%",
-    "image": ""
+    "image": "https://d275t8dp8rxb42.cloudfront.net/items/held/Score+Shield.png"
   },
   {
     "name": "Shell_Bell",
@@ -589,7 +589,7 @@
     "level1": "45",
     "level10": "60",
     "level20": "75",
-    "image": ""
+    "image": "https://d275t8dp8rxb42.cloudfront.net/items/held/Shell+Bell.png"
   },
   {
     "name": "Special_Attack_Specs",
@@ -626,7 +626,7 @@
     "level1": "8",
     "level10": "12",
     "level20": "16",
-    "image": ""
+    "image": "https://d275t8dp8rxb42.cloudfront.net/items/held/Special+Attack+Specs.png"
   },
   {
     "name": "Weakness_Policy",
@@ -663,7 +663,7 @@
     "level1": "2%",
     "level10": "2.5%",
     "level20": "3%",
-    "image": ""
+    "image": "https://d275t8dp8rxb42.cloudfront.net/items/held/Weakness+Policy.png"
   },
   {
     "name": "Wise_Glasses",
@@ -700,6 +700,6 @@
     "level1": "3%",
     "level10": "5%",
     "level20": "7%",
-    "image": ""
+    "image": "https://d275t8dp8rxb42.cloudfront.net/items/held/Wise+Glasses.png"
   }
 ]
