@@ -4,6 +4,8 @@ with open('pokemons.json', mode='r') as f:
     pokemons = json.load(f)
 with open('stats.json', mode='r') as f:
     stats = json.load(f)
+with open('battleitems.json', mode='r') as f:
+    battleitems = json.load(f)    
 app = FastAPI()
 
 @app.get("/")
@@ -12,7 +14,8 @@ def index():
 
 @app.get("/pokemons")
 def getPkm():
-    return [i["name"] for (j, i) in enumerate(pokemons) if j % 2 == 0]
+    #return [i["name"] for (j, i) in enumerate(pokemons) if j % 2 == 0]
+    return [i["name"] for i in pokemons]
 
 def getPokemonFromPokemons(name: str) -> list:
     for i in pokemons:
@@ -29,6 +32,51 @@ def getPokemonFromStats(name: str) -> list:
         if name.lower() == i.get('name').lower():
             return i 
     return None
+
+@app.get("/battleitems")
+def getPkm():
+    return [i["display_name"] for i in battleitems]
+
+def getItemFromBattleitems(name: str) -> list:
+    for i in battleitems:
+        if name.lower() == i.get('name').lower():
+            return i 
+    return None
+
+@app.get("/battleitems/{name}")
+def getPokemon(name: str):
+    result = getItemFromBattleitems(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    return result
+
+@app.get("/battleitems/{name}/description")
+def getPokemon(name: str):
+    result = getItemFromBattleitems(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    return result["description"]
+
+@app.get("/battleitems/{name}/cooldown")
+def getPokemon(name: str):
+    result = getItemFromBattleitems(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    return result["cooldown"]
+
+@app.get("/battleitems/{name}/unlocklevel")
+def getPokemon(name: str):
+    result = getItemFromBattleitems(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    return result["unlocklevel"]
+
+@app.get("/battleitems/{name}/image")
+def getPokemon(name: str):
+    result = getItemFromBattleitems(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    return result["image"]
 
 @app.get("/pokemons/{name}")
 def getPokemon(name: str):
