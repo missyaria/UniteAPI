@@ -142,6 +142,17 @@ def getPokemonMove(name: str, move: int =None):
         return f"Error : This isn't an available move"
     return result["move"][move]
 
+@app.get("/pokemons/{name}/moves/cd")
+def getPokemonMove(name: str, movecd: int =None):
+    result = getPokemonFromPokemons(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    if movecd is None:
+        return result["movecd"]
+    if movecd > 8:
+        return f"Error : This isn't an available move"
+    return result["movecd"][movecd]
+
 @app.get("/pokemons/{name}/moves/desc")
 def getPokemonMoveDesc(name: str, movedesc: int =None):
     result = getPokemonFromPokemons(name)
@@ -152,6 +163,35 @@ def getPokemonMoveDesc(name: str, movedesc: int =None):
     if int(movedesc) > 11:
         return f"Error : This isn't an available description"
     return result["movedesc"][movedesc]
+
+@app.get("/pokemons/{name}/moves/rsb")
+def getPokemonMoveRsb(name: str, move: int =None):
+    result = getPokemonFromPokemons(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    if move is None:
+        return result["moversb"]
+    if int(move) > 11:
+        return f"Error : This isn't an available description"
+    return result["moversb"][move]
+
+@app.get("/pokemons/{name}/moves/icons")
+def getPokemonIcon(name: str, move: int =None):
+    result = getPokemonFromPokemons(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    if move is None:
+        return result["moveicon"]
+    if int(move) > 11:
+        return f"Error : This isn't an available description"
+    return result["moveicon"][move]
+
+@app.get("/pokemons/{name}/class")
+def getPokemonMoveClass(name: str):
+    result = getPokemonFromPokemons(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    return result["class"]
     
 @app.get("/pokemons/{name}/stat")
 def getPokemonStat(name: str, level: int =None):
