@@ -8,11 +8,13 @@ with open('battleitems.json', mode='r') as f:
     battleitems = json.load(f)
 with open('helditems.json', mode='r') as f:
     helditems = json.load(f)    
+with open('pokemondb.json', mode='r') as f:
+    pokemondb = json.load(f)    
 app = FastAPI()
 
 @app.get("/")
 def index():
-    return {"Paths : /pokemons, /pokemon, /items, /item"}
+    return {"api using mostly unite-db data by misi. https://docs.google.com/spreadsheets/d/e/2PACX-1vRIQuAeoMeineAU1a9x9iMslVAagBctoxeQBGiBp3I8DvqhftUOpOtVytoVZ1ukcOBp-30w2KD_M5c0/pubhtml"}
 
 @app.get("/pokemons")
 def getPkm():
@@ -24,6 +26,97 @@ def getPokemonFromPokemons(name: str) -> list:
         if name.lower() == i.get('name').lower():
             return i 
     return None
+
+def getPokemonFromPokemondb(name: str) -> list:
+    for i in pokemondb:
+        if name.lower() == i.get('name').lower():
+            return i 
+    return None
+
+@app.get("/pokemondb")
+def getPkmdb():
+    return [i["name"] for i in pokemons]
+
+@app.get("/pokemondb/{name}/ratio")
+def getRatio(name: str, move, add: int =0):
+    result = getPokemonFromPokemondb(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    if int(add) != 0:
+        return result["skills"][int(move)]["rsb"]["add" + str(add) + "_ratio"]
+    return result["skills"][int(move)]["rsb"]["ratio"]
+
+@app.get("/pokemondb/{name}/moveupgrades/ratio")
+def getUpgradeRatio(name: str, move, upgrade, add: int=0):
+    result = getPokemonFromPokemondb(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    if int(add) != 0:
+        return result["skills"][int(move)]["upgrades"][int(upgrade)]["rsb"]["add" + str(add) + "_ratio"]  
+    return result["skills"][int(move)]["upgrades"][int(upgrade)]["rsb"]["ratio"]
+
+@app.get("/pokemondb/{name}/moveupgrades/ratio/enhanced")
+def getUpgradeRatioEnhanced(name: str, move, upgrade, add: int=0):
+    result = getPokemonFromPokemondb(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    if int(add) != 0:
+        return result["skills"][int(move)]["upgrades"][int(upgrade)]["rsb"]["add" + str(add) + "_enhanced_ratio"]  
+    return result["skills"][int(move)]["upgrades"][int(upgrade)]["rsb"]["enhanced_ratio"]
+
+@app.get("/pokemondb/{name}/base")
+def getBase(name: str, move, add: int=0):
+    result = getPokemonFromPokemondb(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    if int(add) != 0:
+        return result["skills"][int(move)]["rsb"]["add" + str(add) + "_base"]  
+    return result["skills"][int(move)]["rsb"]["base"]
+
+@app.get("/pokemondb/{name}/moveupgrades/base")
+def getUpgradeBase(name: str, move, upgrade, add: int=0):
+    result = getPokemonFromPokemondb(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    if int(add) != 0:
+        return result["skills"][int(move)]["upgrades"][int(upgrade)]["rsb"]["add" + str(add) + "_base"]  
+    return result["skills"][int(move)]["upgrades"][int(upgrade)]["rsb"]["base"]
+
+@app.get("/pokemondb/{name}/moveupgrades/base/enhanced")
+def getUpgradeBaseEnhanced(name: str, move, upgrade, add: int=0):
+    result = getPokemonFromPokemondb(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    if int(add) != 0:
+        return result["skills"][int(move)]["upgrades"][int(upgrade)]["rsb"]["add" + str(add) + "_enhanced_base"]  
+    return result["skills"][int(move)]["upgrades"][int(upgrade)]["rsb"]["enhanced_base"]
+
+@app.get("/pokemondb/{name}/slider")
+def getSlider(name: str, move, add: int=0):
+    result = getPokemonFromPokemondb(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    if int(add) != 0:
+        return result["skills"][int(move)]["rsb"]["add" + str(add) + "_slider"]  
+    return result["skills"][int(move)]["rsb"]["slider"]
+
+@app.get("/pokemondb/{name}/moveupgrades/slider")
+def getUpgradeSlider(name: str, move, upgrade, add: int=0):
+    result = getPokemonFromPokemondb(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    if int(add) != 0:
+        return result["skills"][int(move)]["upgrades"][int(upgrade)]["rsb"]["add" + str(add) + "_slider"] 
+    return result["skills"][int(move)]["upgrades"][int(upgrade)]["rsb"]["slider"]
+
+@app.get("/pokemondb/{name}/moveupgrades/slider/enhanced")
+def getUpgradeSliderEnhanced(name: str, move, upgrade, add: int=0):
+    result = getPokemonFromPokemondb(name)
+    if result is None:
+        return f"Error : {name} isn't available"
+    if int(add) != 0:
+        return result["skills"][int(move)]["upgrades"][int(upgrade)]["rsb"]["add" + str(add) + "_enhanced_slider"] 
+    return result["skills"][int(move)]["upgrades"][int(upgrade)]["rsb"]["enhanced_slider"]
 
 @app.get("/pokemons/stats")
 def getStats():
